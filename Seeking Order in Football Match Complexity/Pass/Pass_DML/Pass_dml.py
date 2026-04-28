@@ -1,14 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Pass · Cluster-wise DML with Full Paper-grade Diagnostics
-========================================================
-
-改动点（唯一改动）：
-- Att 相关 KPI 不再作为 treatment（不进 D）
-- 但 Att KPI 仍作为协变量进入 X（即：att 始终在 X）
-
-其余逻辑不变：清理/overlap/multiD/robustness/oneD/stability/placebo/输出结构均保留。
-"""
 
 import os
 import re
@@ -65,13 +54,12 @@ FLAG_RESID_RATIO_LE = 0.30
 GPS_BINS = 5
 
 # 稳定性重复次数
-STAB_REPS = 20          # 建议 20~80（越大越稳）
-STAB_PVAL_CUT = 0.05    # 稳定性里用 p<0.05（同时也会给 FDR 版本）
-
+STAB_REPS = 20          #  
+STAB_PVAL_CUT = 0.05    # 
 # placebo 次数（y 置换次数；越大越慢）
 PLACEBO_Y_REPS = 50
 
-# 可选：只对通过筛选的 KPI 做 D-置换 placebo（否则很慢）
+# 可选：只对通过筛选的 KPI 做 D-置换 placebo
 PLACEBO_D_ONLY_ON_CANDIDATES = True
 
 
