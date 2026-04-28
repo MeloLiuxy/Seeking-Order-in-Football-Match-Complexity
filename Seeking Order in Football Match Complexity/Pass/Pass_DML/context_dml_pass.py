@@ -1,19 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Pass · Cluster-wise DML with Full Paper-grade Diagnostics
-========================================================
 
-改动点：
-1) Att 相关 KPI 不再作为 treatment（不进 D）
-2) 但 Att KPI 仍作为协变量进入 X（即：att 始终在 X）
-3) 新增 minute_bin / score_state 的 dummy 列作为额外情境控制变量进入 X：
-   - minute_bin_31-60
-   - minute_bin_61-90+
-   - score_state_leading
-   - score_state_trailing
-
-其余逻辑不变：清理/overlap/multiD/robustness/oneD/stability/placebo/输出结构均保留。
-"""
 
 import os
 import re
@@ -62,7 +47,7 @@ FDR_ALPHA = 0.10
 NEAR_CONST_VAR_EPS = 1e-12
 NEAR_CONST_UNIQUE_MAX = 2
 
-# overlap flag 阈值（可调得更严）
+# overlap flag 
 FLAG_R2_GE = 0.90
 FLAG_RESID_RATIO_LE = 0.30
 
