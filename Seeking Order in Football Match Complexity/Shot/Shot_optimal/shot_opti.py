@@ -1,29 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-并行版 · Shot 最优策略搜索（overall 目标，**仅 L 阶段**）
-=====================================================
 
-相较旧版的改动：
-1) 目标函数从 fail-only 改为 overall 为主目标
-2) 约束：
-   - fail 不能变差
-   - success 不能显著变差
-3) 稳健筛选规则保持一致：
-   - baseline BH q-value <= 0.05
-   - BH q-value+ <= 0.05
-   - |t| >= 4
-   - Effect/1 SD 与 Effect/1 SD+ 方向一致（不反转）
-   - 相对变化幅度 <= 50%
-4) R_(D|X)^2 不做硬删，只做标记
-5) 仅使用 L_cluster_k
-6) 提速：
-   - GA 缩小：pop=30, gen=40
-   - 只按 cluster 并行（对 shot 来说就是 cluster 0/1/2 并行）
-   - 减少模型输入特征，只保留：
-       a) 通过筛选的 KPI
-       b) 少量背景数值变量
-   - 只在主进程写 Excel
-"""
 
 import os
 import re
