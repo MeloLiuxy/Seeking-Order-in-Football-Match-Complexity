@@ -1,16 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-为 Shot 计算围绕 L/E 两点的一组空间指标（含质心距离）：
-- 基于同一帧 freeze_frame（teammate=True/False 且 keeper=False 为外场球员）
-- L 点：location_x, location_y
-- E 点：end_location_x, end_location_y  （来自该帧 keeper=True 的坐标）
-- 指标：
-  * Adv_5(*) / Adv_10(*)
-  * Avg_k_Att(*) / Avg_k_Def(*)  (k∈{1,2,3,5})
-  * Area_Att(*) / Area_Def(*)
-  * Spr_Att(*)  / Spr_Def(*)
-  * DistToAttCentroid(*) / DistToDefCentroid(*)
-"""
+
 
 import os
 import ast
