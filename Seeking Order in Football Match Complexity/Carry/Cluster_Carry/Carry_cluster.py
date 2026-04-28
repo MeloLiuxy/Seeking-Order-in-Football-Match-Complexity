@@ -1,13 +1,4 @@
-# -*- coding: utf-8 -*-
-r"""
-Carry · 与你 shot/passes 同理修改版
-========================================================
-✅ 聚类仍然用四维：(location_x, location_y, carry_end_location_x, carry_end_location_y)
-✅ 输出：写回 cluster_id + 导出 Excel
-✅ 画图：一个 cluster 一张球场图（每簇最多采样 PLOT_SAMPLE_MAX_PER_CLUSTER 条线）
-✅ 球场风格：对标你 shot 那套（白底、无网格、去边框、黑线；禁区蓝/红保持）
-✅ 不要左上角统计框（按你最新要求）
-"""
+
 
 import os
 import numpy as np
@@ -48,7 +39,7 @@ FIXED_K  = 6
 # 每簇最多画多少条线（避免太密）
 PLOT_SAMPLE_MAX_PER_CLUSTER = 2500
 
-# ✅ 线段视觉（你 passes 那套就是 alpha=0.35, lw=1.6）
+# ✅ 线段视觉（ alpha=0.35, lw=1.6）
 LINE_ALPHA = 0.35
 LINE_WIDTH = 1.6
 
@@ -230,7 +221,7 @@ for cid in all_cids:
 
     col = cluster_colors[int(cid)]
 
-    # ✅ 这里是你指出的那段：现在是正确的（alpha/width 已定义）
+    # ✅
     for _, r in plot_sub.iterrows():
         x1, y1 = float(r["location_x"]), float(r["location_y"])
         x2, y2 = float(r["carry_end_location_x"]), float(r["carry_end_location_y"])
