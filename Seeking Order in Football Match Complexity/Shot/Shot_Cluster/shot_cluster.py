@@ -1,21 +1,3 @@
-# -*- coding: utf-8 -*-
-r"""
-Shot · 聚类只用 location (x,y)，但画图用 location->end_location 的线段（shot 风格球场）
-====================================================================================
-
-✅ 修改方式同你 passes 那段：
-- 聚类：只用 (location_x, location_y)
-- 输出：cluster_id_loc 写回表 + 导出 Excel
-- 画图：一个 cluster 一张图（每簇最多采样 PLOT_SAMPLE_MAX_PER_CLUSTER 条线）
-- 不画左上角统计框（你刚刚说不要了）
-- 球场画法：对标你 shot 那套（白底、无网格、去边框、黑线；禁区蓝/红保持）
-
-输入：
-  D:\pipeline\Shot\shots的特征以及位置.xlsx
-输出：
-  D:\pipeline\Shot\起点shots_的聚类.xlsx
-  D:\pipeline\Shot\shots_clusters_by_cluster\shot_cluster_*.png
-"""
 
 import os
 import numpy as np
