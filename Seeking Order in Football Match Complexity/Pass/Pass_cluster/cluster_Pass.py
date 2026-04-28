@@ -1,11 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-✅ 你要的版本（不再画左上角统计框）
-✅ 球场画法对标你 shot 那套：白底、无网格、去掉多余边框、黑色球场线
-✅ 用 passes 的 (location_x, location_y, end_location_x, end_location_y) 做 KMeans 聚类
-✅ 一个 cluster 一张球场图（每簇最多采样 PLOT_SAMPLE_MAX_PER_CLUSTER 条线）
-✅ 同时把 cluster_id 写回并导出 Excel
-"""
+
 
 import os
 import numpy as np
