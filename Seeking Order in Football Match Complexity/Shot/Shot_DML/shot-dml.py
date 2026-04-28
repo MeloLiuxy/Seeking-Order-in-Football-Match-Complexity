@@ -1,17 +1,4 @@
-# -*- coding: utf-8 -*-
-r"""
-Shot · Cluster-wise DML (one-feature-at-a-time) with Full Paper-grade Diagnostics
-===============================================================================
 
-按你的要求“同理改”：
-1) Att 不做 treatment：所有 Att KPI 不进入 D_cols，但会作为控制变量进 X
-2) 不考虑 E：只跑 L（原本就是 L-only，这里保持），且 Att 规则只在 L 内生效
-
-L-block 建模约束（对齐你 Pass / Carry 的改法）：
-- D（treatment）：仅 L 且 非 Att 的 KPI（L_nonatt）
-- X（controls）：背景变量（非 L/E、非 meta） + L_att（只作为控制，不作为 treatment）
-- 不把其它 L_nonatt 放入 X（保持“L 阶段不互相当协变量”的约束；但把 L_att 作为例外强制纳入 X）
-"""
 
 import os
 import re
