@@ -1,19 +1,3 @@
-# -*- coding: utf-8 -*-
-r"""
-Shot · Cluster-wise DML (one-feature-at-a-time) with Full Paper-grade Diagnostics
-=================================================================================
-
-在原始版本基础上新增：
-1) 把 minute_bin / score_state 的 dummy 列作为额外情境控制变量加入 X
-2) 仅作为 controls，不作为 treatment
-3) 保持原有 one-feature-at-a-time 框架不变
-
-新增情境控制列（必须已在输入文件中存在）：
-- minute_bin_31-60
-- minute_bin_61-90+
-- score_state_leading
-- score_state_trailing
-"""
 
 import os
 import re
