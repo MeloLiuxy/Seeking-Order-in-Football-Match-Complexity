@@ -1,29 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-并行版 · Pass 最优策略搜索（整体目标 overall）
-================================================
 
-相较之前版本的提速改动：
-1) 按 cluster 并行（ProcessPoolExecutor）
-2) GA 缩小：pop=30, gen=40
-3) fitness 只优化 overall，并加 fail / succ 约束
-4) 不再把所有数值列都喂给预测模型：
-   - 只保留 通过筛选的 KPI
-   - 再加少量背景数值列（自动排除明显 meta / 原始嵌套字段）
-5) 减少不必要的 DataFrame 复制与重复计算
-6) 只在主进程写 Excel
-
-硬筛选规则：
-- baseline BH q-value <= 0.05
-- BH q-value+ <= 0.05
-- |t| >= 4
-- Effect/1 SD 与 Effect/1 SD+ 方向一致（不反转）
-- 相对变化幅度 <= 50%
-
-R_(D|X)^2 不做硬淘汰，只做标记：
-- r2_priority_flag: [0.10, 0.70]
-- r2_best_range_flag: [0.10, 0.50]
-"""
 
 import os
 import re
