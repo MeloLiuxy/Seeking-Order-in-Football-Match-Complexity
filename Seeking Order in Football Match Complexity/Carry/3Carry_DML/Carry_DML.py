@@ -1,17 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Carry · Cluster-wise DML (one-feature-at-a-time) with Full Paper-grade Diagnostics
-===============================================================================
 
-改动要求（你说的两点都做到了）：
-1) “同理改”：Att 相关 KPI 不再作为 treatment（不进 D），但始终作为协变量（进 X）
-2) “只做 E”：完全不再跑/不再依赖任何 L（不识别、不使用、不输出 L 相关结果）
-
-E-block 的建模约束（对齐你 Pass 的思路）：
-- D（treatment）：仅 E 且 非 Att 的 KPI（E_nonatt）
-- X（controls）：背景变量（非 L/E、非 meta） + E_att（只作为控制，不作为 treatment）
-- 不把其它 E_nonatt 放入 X（保持“E 阶段不互相当协变量”的约束；但把 E_att 作为例外强制纳入 X）
-"""
 
 import os
 import re
@@ -48,7 +35,7 @@ MAJ_KEEP_RATIO_DEFAULT = 0.5
 MIN_SAMPLES   = 80
 MIN_MINOR     = 12
 
-# trimming（默认 0.02；稳健性会跑 0）
+# trimming（默认 0.02；稳健性跑 0）
 TRIM_TOP_FRAC_DEFAULT = 0.02
 MIN_RESID_SD  = 1e-10
 
@@ -108,9 +95,7 @@ def uniq_keep_order(seq):
     return out
 
 
-# =========================
-# ✅ 识别 Att KPI：不当 treatment，但进 X
-# =========================
+
 ATT_HINT_REGEXES = [
     re.compile(r"DistToAttCentroid", re.IGNORECASE),
     re.compile(r"Area[_\s\-]*Att", re.IGNORECASE),
