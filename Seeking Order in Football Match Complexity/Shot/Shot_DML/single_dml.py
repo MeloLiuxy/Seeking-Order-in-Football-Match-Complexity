@@ -160,9 +160,9 @@ warnings.filterwarnings("ignore", category=UserWarning)
 # 1. USER CONFIGURATION
 # =============================================================================
 
-INPUT_PATH = r"D:\pipeline\返修\聚类\射门cluster_sensitivity_K2_K5_仅location聚类\Shot_K3_main_for_DML_补充背景变量_SAFE.xlsx"
+INPUT_PATH = r""
 SHEET_NAME = 0
-OUTPUT_XLSX = r"D:\pipeline\返修\DML部分\shot_dml_单指标_仅L_Avg与Centroid互斥_RF主模型_含训练fold内下采样敏感性.xlsx"
+OUTPUT_XLSX = r""
 
 OUTCOME_COL = "success_def"
 CLUSTER_COL = "cluster_id"
