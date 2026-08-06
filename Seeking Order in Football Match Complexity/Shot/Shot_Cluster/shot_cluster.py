@@ -91,9 +91,9 @@ warnings.filterwarnings("ignore", category=UserWarning)
 # 1. USER CONFIGURATION
 # =============================================================================
 
-INPUT_PATH = r"D:\pipeline\返修\聚类\带球cluster_sensitivity_K2_K5\Carry_K3_main_for_DML.xlsx"
+INPUT_PATH = r""
 SHEET_NAME = 0
-OUTPUT_XLSX = r"D:\pipeline\返修\DML部分\carry_dml_固定代表KPI_联合交互DML_审稿人最终报告.xlsx"
+OUTPUT_XLSX = r""
 
 OUTCOME_COL = "success_def"
 CLUSTER_COL = "cluster_id"
